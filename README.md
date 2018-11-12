@@ -1,9 +1,9 @@
 
 ## A repo for study node.js
 
- -Learn the concept of modules
- -using http module
- -using arrow function
+ - Learn the concept of modules
+ - using http module
+ - using arrow function
  
 ### links
 
