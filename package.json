@@ -1,0 +1,26 @@
+{
+  "name": "nodestudy",
+  "version": "1.0.0",
+  "description": "For study basic node concepts",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "body-parser": "*",    
+    "express": "^4.16.1",
+    "jade":"*",
+    "serve-favicon":"*",
+    "morgan":"*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/jsgit4study/study-node"
+  },
+  "keywords": [
+     "nodejs"
+  ],
+  "author": "Jean Wang<jeanharmsen.yahoo.com>",
+  "license": "ISC"
+}
+

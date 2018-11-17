@@ -1,2 +1,0 @@
-<h1>Hello World!</h1>
-<h6>This is the content of data.txt</h6>

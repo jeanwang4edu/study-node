@@ -1,16 +1,30 @@
-//load the http module
-var http = require('http'),
-    fs   = require('fs');
+//load the needed  modules
+var express = require('express'),
+    routes = require('./routes'),
+    http = require('http'),
+    path = require('path');
+    
 
-//configure the http server
-http.createServer( (req, res) => {
+var app = express();
 
-    //read the content of file data.txt and output to server
-    fs.readFile('data.txt', function readData(err,data) {
-	res.writeHead(200, {'Content-Type':'text/html'});
-        res.end(data);
-    });
+app.set('port', 3000);
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'jade');
+//app.use(express.favicon());
+//app.use(express.logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded());
+//app.use(express.methodOverride());
+//app.use(app.router);
+app.use(express.static(path.join(__dirname, 'public')));
 
-}).listen(3000, '0.0.0.0');
+//routes
+app.get('/', routes.index);
 
-console.log("Server running at http://localhost:3000");
+// configure http server
+http.createServer(app).listen(app.get('port'), function(){
+	console.log('Express server listening on port '  + app.get('port'));
+});
+
+
+
